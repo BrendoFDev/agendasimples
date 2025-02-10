@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('./src/controllers/userController');
 
-router.get('/',  userController.cadUser);
-router.post('/', userController.receiveUser)
+const homeController = require('./src/controllers/homeController');
+const loginController = require('./src/controllers/loginController');
+
+// home
+router.get('/',  homeController.index);
+
+// login
+router.get('/login',loginController.index)
+
 module.exports = router;

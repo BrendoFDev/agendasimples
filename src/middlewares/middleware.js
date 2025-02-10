@@ -1,7 +1,7 @@
 exports.chechCsfrError = (err, req, res, next) =>{
-    if(err && err.code === 'EBADCSFRTOKEN'){
-        return res.render('error');
-    }
+    if(err)
+        res.render('error');
+    return next();
 }
 
 exports.newCsrftoken = (req,res,next) => {
