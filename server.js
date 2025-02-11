@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const csurf = require('csurf');
 const session = require('express-session');
 const MongoStore =require('connect-mongo');
-
+const flash = require('express-flash')
 const middleware = require('./src/middlewares/middleware');
 
 const mongoose = require('mongoose');
@@ -39,6 +39,10 @@ app.use(express.json());
 app.use(express.static(pathResolver.resolve(__dirname,'public')));
 app.set('views',pathResolver.resolve(__dirname,'src','views'));
 app.set('view engine', 'ejs');
+
+app.use(
+    flash()
+  );
 
 app.use(helmet());
 app.use(cookieParser());

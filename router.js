@@ -9,5 +9,7 @@ router.get('/',  homeController.index);
 
 // login
 router.get('/login',loginController.index)
+router.post('/login/registerUser', loginController.registerUser)
+router.post('/login/userLogin', loginController.userLogin)
 
 module.exports = router;
