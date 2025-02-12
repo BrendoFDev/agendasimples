@@ -11,5 +11,5 @@ router.get('/',  homeController.index);
 router.get('/login',loginController.index)
 router.post('/login/registerUser', loginController.registerUser)
 router.post('/login/userLogin', loginController.userLogin)
-
+router.get('/logout', loginController.logout)
 module.exports = router;

@@ -47,6 +47,7 @@ app.use(
 app.use(helmet());
 app.use(cookieParser());
 app.use(csurf({cookie:{httpOnly:true}}));
+app.use(middleware.localVariables)
 app.use(middleware.newCsrftoken);
 app.use(middleware.chechCsfrError);
 

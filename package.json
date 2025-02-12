@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "babel-loader": "^9.2.1",
+    "bcryptjs": "^2.4.3",
     "connect-mongo": "^5.1.0",
     "cookie-parser": "^1.4.7",
     "core-js": "^3.39.0",
@@ -21,6 +22,7 @@
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-flash": "^0.0.2",
     "express-flash-message": "^3.0.2",
     "express-session": "^1.18.1",
     "flash": "^1.1.0",

@@ -1,10 +1,18 @@
 exports.chechCsfrError = (err, req, res, next) =>{
     if(err)
         res.render('error');
-    return next();
+    next();
+}
+
+exports.localVariables = (req, res,next) => {
+    res.locals.errors = req.flash('errors');
+    res.locals.success = req.flash('success');
+    res.locals.user = req.session.user;
+    next();
 }
 
 exports.newCsrftoken = (req,res,next) => {
     res.locals.csrfToken = req.csrfToken();
-    return next();
+    
+    next();
 }
