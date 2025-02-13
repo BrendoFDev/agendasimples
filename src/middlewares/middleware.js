@@ -11,6 +11,17 @@ exports.localVariables = (req, res,next) => {
     next();
 }
 
+exports.loginRequired = (req, res, next) =>{
+    if(!req.session.user){
+        req.flash("errors", "Você precisa fazer login!");
+        req.session.save(function(){
+            res.redirect('/');
+        });
+        return;
+    }
+    next();
+}
+
 exports.newCsrftoken = (req,res,next) => {
     res.locals.csrfToken = req.csrfToken();
     
